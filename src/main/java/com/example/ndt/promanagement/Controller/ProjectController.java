@@ -126,7 +126,7 @@ public class ProjectController {
         int totalItems = projectService.allItems();
         List<Project> projects = (List<Project>) projectService.pagination(page);
         int totalPage;
-        if(totalItems/offset == 0){
+        if(totalItems%offset == 0){
             totalPage = totalItems/offset;
         }else {
             totalPage = totalItems / offset + 1;
